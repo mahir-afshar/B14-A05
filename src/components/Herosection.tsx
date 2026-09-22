@@ -2,13 +2,13 @@ import banner from "../assets/banner-stack.png";
 
 const Herosection = () => {
   return (
-    <div className="grid grid-cols-2 justify-between gap-30 items-center container mx-auto bg-white rounded-2xl p-4 my-2">
+    <div className="grid grid-cols-2 justify-between gap-30 items-center container mx-auto bg-white rounded-2xl my-2">
       <div>
         <div>
           <h1 className="text-5xl font-bold">
             Build Your Ideal
             <br />
-            <span className="bg-linear-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent font-bold text-5xl">
+            <span className="bg-linear-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
               Development Stack
             </span>
           </h1>
