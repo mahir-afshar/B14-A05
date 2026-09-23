@@ -3,9 +3,14 @@ import type { Tech } from "../../types/techtype";
 type YourStackProps = {
   selectedTechs: Tech[];
   onRemove: (id: string) => void;
+  onRemoveAll: () => void;
 };
 
-const YourStack = ({ selectedTechs, onRemove }: YourStackProps) => {
+const YourStack = ({
+  selectedTechs,
+  onRemove,
+  onRemoveAll,
+}: YourStackProps) => {
   return (
     <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
       <h2 className="text-lg font-bold text-gray-900">Your Stack</h2>
@@ -20,19 +25,19 @@ const YourStack = ({ selectedTechs, onRemove }: YourStackProps) => {
 
       <div className="mt-4 space-y-3">
         {selectedTechs.length === 0 ? (
-          <div className="flex h-16 items-center justify-center rounded-xl border border-dashed border-gray-200">
+          <div className="flex h-28 items-center justify-center rounded-2xl border-2 border-dashed border-gray-200">
             <p className="text-sm text-gray-400">Your stack is empty.</p>
           </div>
         ) : (
           selectedTechs.map((tech) => (
             <div
               key={tech.id}
-              className="flex items-center gap-3 rounded-xl border border-gray-100 p-3"
+              className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white p-3 shadow-sm"
             >
               <img
                 src={tech.icon}
                 alt={tech.name}
-                className="h-8 w-8 object-contain"
+                className="h-10 w-10 object-contain"
               />
 
               <div>
@@ -40,18 +45,27 @@ const YourStack = ({ selectedTechs, onRemove }: YourStackProps) => {
 
                 <p className="text-xs text-gray-400">{tech.category}</p>
               </div>
-              <div>
+              <div className="ml-auto">
                 <button
                   onClick={() => onRemove(tech.id)}
-                  className="text-gray-400 hover:text-red-500"
+                  className="text-2xl text-gray-400 transition hover:text-red-500"
                 >
-                  ×
+                  X
                 </button>
               </div>
             </div>
           ))
         )}
       </div>
+
+      {selectedTechs.length > 0 && (
+        <button
+          onClick={onRemoveAll}
+          className="mt-4 w-full rounded-full border border-gray-200 py-2 text-sm font-medium text-gray-600 transition hover:border-red-200 hover:text-red-500"
+        >
+          Remove All
+        </button>
+      )}
     </div>
   );
 };

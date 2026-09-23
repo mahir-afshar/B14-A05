@@ -3,21 +3,30 @@ import type { Tech } from "../../types/techtype";
 import Techcards from "./Techcards";
 import YourStack from "./YourStack";
 
-
 const Techs = ({ techPromise }: { techPromise: Promise<Tech[]> }) => {
   const allTechs = use(techPromise);
 
   const [selectedTechs, setSelectedTechs] = useState<Tech[]>([]);
 
   const handleAdd = (tech: Tech) => {
-    setSelectedTechs((prev) => [...prev, tech]);
+    setSelectedTechs((prev) => {
+      const alreadySelected = prev.some((item) => item.id === tech.id);
+
+      if (alreadySelected) {
+        return prev;
+      }
+
+      return [...prev, tech];
+    });
   };
 
   const handleRemove = (id: string) => {
-  setSelectedTechs((prev) =>
-    prev.filter((tech) => tech.id !== id)
-  );
-};
+    setSelectedTechs((prev) => prev.filter((tech) => tech.id !== id));
+  };
+
+  const handleRemoveAll = () => {
+    setSelectedTechs([]);
+  };
 
   return (
     <section>
@@ -39,11 +48,14 @@ const Techs = ({ techPromise }: { techPromise: Promise<Tech[]> }) => {
                 tech={singleTech}
                 onAdd={handleAdd}
               />
-     
             ))}
           </div>
           <div>
-            <YourStack selectedTechs={selectedTechs} onRemove={handleRemove} />
+            <YourStack
+              selectedTechs={selectedTechs}
+              onRemove={handleRemove}
+              onRemoveAll={handleRemoveAll}
+            />
           </div>
         </div>
       </div>
