@@ -48,7 +48,7 @@ const YourStack = ({
               <div className="ml-auto">
                 <button
                   onClick={() => onRemove(tech.id)}
-                  className="text-2xl text-gray-400 transition hover:text-red-500"
+                  className=" text-gray-400 transition hover:text-red-500"
                 >
                   X
                 </button>

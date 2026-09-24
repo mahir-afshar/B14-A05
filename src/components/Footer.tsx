@@ -2,63 +2,71 @@ import Logo from "../assets/logo-text.png";
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto">
-      <section>
-        <div className="flex justify-between gap-5">
-          <div>
-            <div>
+    <footer className="container mx-auto border-t border-gray-100">
+      <section className="py-16">
+        <div className="grid grid-cols-5 gap-10">
+          <div className="col-span-2">
+            <div className="w-32">
               <img src={Logo} alt="Logo" />
             </div>
             <div>
-              <p>
+              <p className="mt-5 max-w-sm text-sm leading-5 text-gray-500">
                 Curated tools, technologies, and resources for developers
                 building modern software.
               </p>
             </div>
             <div>
-              <ul className="flex gap-5">
-                <li>GitHub</li>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
+              <ul className="mt-6 flex gap-5">
+                <li className="text-sm text-gray-700">GitHub</li>
+                <li className="text-sm text-gray-700">Twitter</li>
+                <li className="text-sm text-gray-700">LinkedIn</li>
               </ul>
             </div>
           </div>
 
           <div>
-            <h2>PRODUCT</h2>
-            <ul>
-              <li>Home</li>
-              <li>Technologies</li>
-              <li>Projects</li>
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+              PRODUCT
+            </h2>
+            <ul className="mt-5 space-y-3">
+              <li className="text-sm text-gray-500">Home</li>
+              <li className="text-sm text-gray-500">Technologies</li>
+              <li className="text-sm text-gray-500">Projects</li>
             </ul>
           </div>
 
           <div>
-            <h2>COMPANY</h2>
-            <ul>
-              <li>About</li>
-              <li>Contact</li>
-              <li>Careers</li>
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+              COMPANY
+            </h2>
+            <ul className="mt-5 space-y-3">
+              <li className="text-sm text-gray-500">About</li>
+              <li className="text-sm text-gray-500">Contact</li>
+              <li className="text-sm text-gray-500">Careers</li>
             </ul>
           </div>
 
           <div>
-            <h2>LEGAL</h2>
-            <ul>
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+              LEGAL
+            </h2>
+            <ul className="mt-5 space-y-3">
+              <li className="text-sm text-gray-500">Privacy Policy</li>
+              <li className="text-sm text-gray-500">Terms of Service</li>
             </ul>
           </div>
         </div>
       </section>
-      <section className="flex justify-between gap-20 my-10">
+      <section className="flex items-center justify-between border-t border-gray-100 py-8">
         <div>
-          <p>© 2026 Dev Stack. All rights reserved.</p>
+          <p className="text-sm text-gray-400">
+            © 2026 Dev Stack. All rights reserved.
+          </p>
         </div>
 
-        <ul className="flex justify-between gap-5">
-          <li>Privacy</li>
-          <li>Terms</li>
+        <ul className="flex gap-7">
+          <li className="text-sm text-gray-400">Privacy</li>
+          <li className="text-sm text-gray-400">Terms</li>
         </ul>
       </section>
     </footer>
