@@ -17,9 +17,11 @@ function App() {
  
   return (
     <>
-    <div>
+    <div className="px-4 sm:px-6 lg:px-8">
 
       <Navbar />
+      <div>
+
       <Herosection />
       <main>
 
@@ -34,8 +36,9 @@ function App() {
       </section>
       </main>
       
-      <Footer />
+      </div>
       
+      <Footer />
     </div>
     </>
   )
