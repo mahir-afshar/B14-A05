@@ -1,13 +1,18 @@
 import Logo from "../assets/logo-text.png";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white">
       <div className="container mx-auto flex h-20 items-center justify-between">
+        <button className="text-2xl md:hidden">
+          <FiMenu />
+        </button>
+
         <div>
           <img src={Logo} alt="Logo" />
         </div>
-        <div>
+        <div className="hidden md:block">
           <ul className="flex justify-between gap-8 items-center">
             <li className="font-medium text-pink-500 hover:text-purple-600">
               <a href="#">Home</a>

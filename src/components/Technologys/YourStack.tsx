@@ -61,7 +61,7 @@ const YourStack = ({
       {selectedTechs.length > 0 && (
         <button
           onClick={onRemoveAll}
-          className="mt-4 w-full rounded-full border border-gray-200 py-2 text-sm font-medium text-gray-600 transition hover:border-red-200 hover:text-red-500"
+          className="mt-4 w-full rounded-lg border border-gray-200 py-2 text-sm font-medium text-gray-600 transition hover:border-red-200 hover:text-red-500"
         >
           Remove All
         </button>

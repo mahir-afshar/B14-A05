@@ -4,6 +4,7 @@ import Techs from "./components/Technologys/Techs"
 import { Suspense } from "react"
 import Footer from "./components/Footer"
 
+
 const fetchTech = async () => {
   const res = await fetch('/data.json')
   const data = await res.json()
